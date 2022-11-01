@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: #00a8ff;
+            justify-content: center;
+            /* align-items: center; */
+        }
+        #water{
+            margin-top: 200px;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            /* border: 1px solid #000; */
+            border-radius: 45% 55% 51% 49% / 51% 36% 64% 49%;
+            /* 内阴影 */
+            box-shadow: inset 10px 20px 30px rgba(0, 0, 0, 0.5),
+                      10px 10px 20px rgba(0, 0, 0, 0.3),
+                      15px 25px 30px rgba(0, 0, 0, 0.05),
+                      inset -10px -10px 15px rgba(255, 255, 255, 0.8);
+            animation: action 3s linear infinite alternate;
+        }
+        #water::after{
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 48%;
+            top: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 45% 55% 51% 49% / 51% 36% 64% 49% ;
+            animation: point2 3s linear infinite alternate;
+        }
+        #water::before{
+            content: "";
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 47%;
+            top: 65px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 45% 55% 51% 49% / 51% 56% 44% 49% ;
+            animation: point 3s linear infinite alternate;
+        }
+        @keyframes action{
+            25%{
+                border-radius: 45% 55% 29% 71% / 51% 56% 44% 49% ;
+            }
+            50%{
+                border-radius:45% 55% 15% 85% / 51% 84% 16% 49% 
+            }
+            75%{
+                border-radius:73% 27% 46% 54% / 81% 48% 52% 19% 
+            }
+            100%{
+                border-radius:40% 60% 46% 54% / 49% 48% 52% 51% 
+            }
+        }
+        @keyframes point{
+            25%{
+                left: 48%;
+               top: 75px;
+            }
+            50%{
+                left: 49%;
+            top: 85px;
+            }
+            75%{
+                left: 48%;
+                 top:75px;
+            }
+            100%{
+                left: 47%;
+                top: 65px;
+            }
+        }
+        @keyframes point2{
+            25%{
+                left: 49%;
+               top: 50px;
+            }
+            50%{
+                left: 50%;
+            top: 60px;
+            }
+            75%{
+                left: 49%;
+            top: 50px;
+            }
+            100%{
+                left: 48%;
+              top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="water"></div>
+</body>
+</html>
